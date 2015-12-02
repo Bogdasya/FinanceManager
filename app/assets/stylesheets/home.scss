@@ -1,3 +1,19 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#main-content{
+  margin-top: 100px;
+  .changing_panel{
+    margin-top: -40px;
+    margin-left: 200px;
+    width: 58.33333333%;
+  }
+  .currency_panel{
+    width: 25%;
+    float: right;
+    .nbu{
+      margin-top: -30px;
+    }
+
+  }
+}

@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+ExchangeRate.create( usd: "23.94".to_d, eur: "25,47".to_d, date: "01-12-2015".to_date )
+ExchangeRate.create( usd: "23.88".to_d, eur: "25.27".to_d, date: "27-11-2015".to_date )
+ExchangeRate.create( usd: "23.59".to_d, eur: "25.27".to_d, date: "26-11-2015".to_date )
+ExchangeRate.create( usd: "23.77".to_d, eur: "25.27".to_d, date: "25-11-2015".to_date )
+ExchangeRate.create( usd: "23.94".to_d, eur: "25.04".to_d, date: "24-11-2015".to_date )
+ExchangeRate.create( usd: "24.06".to_d, eur: "25.50".to_d, date: "23-11-2015".to_date )
+ExchangeRate.create( usd: "23.83".to_d, eur: "25.58".to_d, date: "20-11-2015".to_date )
+ExchangeRate.create( usd: "23.91".to_d, eur: "25.63".to_d, date: "19-11-2015".to_date )
+ExchangeRate.create( usd: "23.77".to_d, eur: "25.63".to_d, date: "18-11-2015".to_date )
+ExchangeRate.create( usd: "23.20".to_d, eur: "25.50".to_d, date: "17-11-2015".to_date )
+ExchangeRate.create( usd: "23.05".to_d, eur: "25.36".to_d, date: "16-11-2015".to_date )
+ExchangeRate.create( usd: "22.91".to_d, eur: "24.88".to_d, date: "13-11-2015".to_date )
