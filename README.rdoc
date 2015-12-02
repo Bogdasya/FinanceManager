@@ -1,6 +1,6 @@
 == README
 
-Application is deployed on Heroku https://enigmatic-shelf-6279.herokuapp.com/
+Application is deployed on Heroku https://enigmatic-shelf-6279.herokuapp.com
 
 
 Please feel free to use a different markup language if you do not plan to run
