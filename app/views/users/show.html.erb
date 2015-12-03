@@ -17,12 +17,27 @@
 </head>
 <body>
 <div id="main-content">
-  <%= form_for  @user do |f| %>
-      <%= f.hidden_field :id, value: @user.id%>
-      <%= f.text_field :first_name, id: 'name', placeholder: 'Имя', class: 'form-control' %>
-      <%= f.text_field :last_name, id: 'name', placeholder: 'Фамилия', class: 'form-control' %>
-      <%= f.text_field :email, id: 'name', placeholder: 'Почта', class: 'form-control' %>
-      <%= f.text_field :mobile_phone, id: 'name', placeholder: 'Телефон', class: 'form-control' %>
-      <%= submit_tag "Сохранить", class: "btn btn-info" %>
-  <% end %>
+  <div class="panel panel-default currency_panel">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= I18n.t('profile') %></h3>
+    </div>
+    <div class="panel-body">
+      <div class="panel-body">
+        <div class="table-responsive nbu">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= @user.full_name %></h3>
+          </div>
+            <%= form_for  @user do |f| %>
+                   <%= f.hidden_field :id, value: @user.id%>
+                   <%= f.text_field :first_name, id: 'name', placeholder: 'Имя', class: 'form-control' %>
+                   <%= f.text_field :last_name, id: 'name', placeholder: 'Фамилия', class: 'form-control' %>
+                   <%= f.text_field :email, id: 'name', placeholder: 'Почта', class: 'form-control' %>
+                   <%= f.text_field :mobile_phone, id: 'name', placeholder: 'Телефон', class: 'form-control' %>
+              <%= submit_tag "Сохранить", class: "btn btn-info" %>
+
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
