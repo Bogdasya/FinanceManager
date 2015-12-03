@@ -34,9 +34,10 @@
                    <%= f.text_field :last_name, id: 'name', placeholder: 'Фамилия', class: 'form-control' %>
                    <%= f.text_field :email, id: 'name', placeholder: 'Почта', class: 'form-control' %>
                    <%= f.text_field :mobile_phone, id: 'name', placeholder: 'Телефон', class: 'form-control' %>
-              <%= submit_tag "Сохранить", class: "btn btn-info" %>
-
+            <%= submit_tag "Сохранить", class: "btn btn-info" %>
             <% end %>
+          <% unless @user.wallet.present? %>
+          <% end %>
         </div>
       </div>
     </div>
