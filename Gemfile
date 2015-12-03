@@ -29,6 +29,7 @@ gem 'cyrillizer'
 gem 'chartkick'
 gem 'groupdate'
 gem 'devise'
+gem 'draper'
 
 gem 'rails_12factor', group: :production
 
