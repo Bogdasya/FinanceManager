@@ -34,10 +34,43 @@
                    <%= f.text_field :last_name, id: 'name', placeholder: 'Фамилия', class: 'form-control' %>
                    <%= f.text_field :email, id: 'name', placeholder: 'Почта', class: 'form-control' %>
                    <%= f.text_field :mobile_phone, id: 'name', placeholder: 'Телефон', class: 'form-control' %>
-            <%= submit_tag "Сохранить", class: "btn btn-info" %>
+            <%= submit_tag "Сохранить", class: "btn btn-info", id: "update_user" %>
             <% end %>
           <% unless @user.wallet.present? %>
-          <% end %>
+            <button class='btn btn-success' id="create_wallet"><%= I18n.t('wallet') %></button>
+           <% end %>
+        </div>
+      </div>
+    </div>
+    <% if @user.wallet.present? %>
+        <div id="wallet_div" >
+          <div class="panel-body">
+            <div class="table-responsive nbu">
+              <div class="panel-heading">
+                <h3 class="panel-title"><%= I18n.t('walletupdate') %></h3>
+              </div>
+              <%= form_for  [@user, @user.wallet] do |f| %>
+                  <%= f.hidden_field :user_id, value: @user.id%>
+                  <%= f.text_field :name, id: 'name', placeholder: 'Название кошелька', class: 'form-control' %>
+                  <%= f.text_field :money, id: 'name', placeholder: 'Деньги', class: 'form-control' %>
+                  <%= submit_tag "Обновить", class: "btn btn-info" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+    <div id="wallet_div" hidden>
+    <div class="panel-body">
+      <div class="table-responsive nbu">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= I18n.t('wallet') %></h3>
+        </div>
+            <%= form_for  [@user, Wallet.new] do |f| %>
+                <%= f.hidden_field :user_id, value: @user.id%>
+                <%= f.text_field :name, id: 'name', placeholder: 'Имя', class: 'form-control' %>
+                <%= f.text_field :money, id: 'name', placeholder: 'Фамилия', class: 'form-control' %>
+                <%= submit_tag "Сохранить", class: "btn btn-info" %>
+            <% end %>
         </div>
       </div>
     </div>
