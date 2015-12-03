@@ -25,7 +25,8 @@
       <div class="panel-body">
         <div class="table-responsive nbu">
           <div class="panel-heading">
-            <h3 class="panel-title"><%= @user.full_name %></h3>
+            <% (@user.first_name.present? && @user.last_name.present?)?  name = @user.full_name: name = "Заполните имя и фамилию" %>
+            <h3 class="panel-title"><%= name %></h3>
           </div>
             <%= form_for  @user do |f| %>
                    <%= f.hidden_field :id, value: @user.id%>
