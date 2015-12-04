@@ -11,10 +11,6 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
-  def events_calendar
-
-  end
-
   private
   def user_params
     params.require(:user).permit(:first_name, :email, :last_name, :mobile_phone)

@@ -9,13 +9,31 @@
 </head>
 <body>
 <div id="main-content">
-  <%= month_calendar events: @meetings do |date, meetings| %>
-      <%= date %>
+        <div class="panel panel-default event_panel">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= I18n.t('tasks') %></h3>
+        </div>
+        <div class="panel-body">
+          <div class="panel-body">
+            <div class="table-responsive nbu">
+              <%= form_for  [@user, Event.new] do |f| %>
+                  <%= f.hidden_field :user_id, value: @user.id%>
+                  <%= f.text_field :title, id: 'name', placeholder: 'название', class: 'form-control' %>
+                  <%= f.text_field :start_at, id: 'name', placeholder: 'Конечная дата', class: "form-control datepicker" %>
+                  <%= submit_tag "Сохранить", class: "btn btn-info", id: "update_user" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
+      </div>
+</div>
+  <%= month_calendar events: @meetings.each do |date, meetings| %>
+      <%= date %>
       <% meetings.each do |meeting| %>
           <div>
             <%= meeting.title %>
           </div>
       <% end %>
   <% end %>
-</div>
+</body>
