@@ -9,5 +9,13 @@
 </head>
 <body>
 <div id="main-content">
-  <div id='calendar'></div>
+  <%= month_calendar events: @meetings do |date, meetings| %>
+      <%= date %>
+
+      <% meetings.each do |meeting| %>
+          <div>
+            <%= meeting.title %>
+          </div>
+      <% end %>
+  <% end %>
 </div>

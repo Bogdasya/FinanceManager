@@ -30,7 +30,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'devise'
 gem 'draper'
-gem 'fullcalendar-rails'
+gem 'simple_calendar', '~> 2.0'
 gem 'momentjs-rails'
 gem 'rails_12factor', group: :production
 

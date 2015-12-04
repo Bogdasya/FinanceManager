@@ -51,9 +51,8 @@
               </div>
               <%= form_for  [@user, @user.wallet] do |f| %>
                   <%= f.hidden_field :user_id, value: @user.id%>
-                  <%= f.text_field :name, id: 'name', placeholder: 'Название кошелька', class: 'form-control' %>
                   <%= f.text_field :money, id: 'name', placeholder: 'Деньги', class: 'form-control' %>
-                  <%= submit_tag "Обновить", class: "btn btn-info" %>
+                  <%= submit_tag "Изменить Баланс", class: "btn btn-info" %>
               <% end %>
             </div>
           </div>
