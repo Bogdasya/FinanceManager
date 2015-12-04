@@ -1,6 +1,22 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul {
+  width: 85%;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+li {
+  width: 15%;
+  float: left;
+  margin-left: 2%;
+  text-align: center;
+}
+li:first-child {
+  margin-left: 0;
+}
 #main-content{
   margin-top: 100px;
   .changing_panel{
@@ -14,7 +30,6 @@
     .nbu{
       margin-top: -30px;
     }
-
   }
 }
 #login{
@@ -22,4 +37,11 @@
 }
 #rg_but{
   margin-left: 180px;
+}
+#calendar{
+  max-width: 900px;
+  margin-left: 15px;
+  .fc-toolbar {
+    text-align: center;
+  }
 }

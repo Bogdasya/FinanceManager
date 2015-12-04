@@ -30,7 +30,8 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'devise'
 gem 'draper'
-
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password

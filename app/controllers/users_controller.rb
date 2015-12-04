@@ -7,7 +7,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to :back
+    flash[:success] = "Welcome to the Sample App!"
+    redirect_to @user
+  end
+
+  def events_calendar
+
   end
 
   private

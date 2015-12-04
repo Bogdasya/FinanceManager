@@ -15,4 +15,6 @@
 //= require jquery_ujs
 //= require chartkick
 //= require turbolinks
+//= require moment
+//= require fullcalendar
 //= require_tree .
