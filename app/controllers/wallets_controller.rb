@@ -3,7 +3,7 @@ class WalletsController < ApplicationController
   def create
     @wallet = Wallet.new(wallet_params)
     if @wallet.save
-      redirect_to User.find(wallet_params[:user_id]), notice: 'Wallet succesfully created'
+      redirect_to user_path(wallet_params[:user_id])
     else
       redirect_to :back
     end

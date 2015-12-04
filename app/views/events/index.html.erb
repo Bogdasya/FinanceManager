@@ -19,13 +19,12 @@
               <%= form_for  [@user, Event.new] do |f| %>
                   <%= f.hidden_field :user_id, value: @user.id%>
                   <%= f.text_field :title, id: 'name', placeholder: 'название', class: 'form-control' %>
-                  <%= f.text_field :start_at, id: 'name', placeholder: 'Конечная дата', class: "form-control datepicker" %>
+                  <%= f.text_field :start_time, id: 'name', placeholder: 'Конечная дата', class: "form-control datepicker" %>
                   <%= submit_tag "Сохранить", class: "btn btn-info", id: "update_user" %>
               <% end %>
             </div>
           </div>
         </div>
-
       </div>
 </div>
   <%= month_calendar events: @meetings.each do |date, meetings| %>
@@ -37,3 +36,6 @@
       <% end %>
   <% end %>
 </body>
+<script>
+    $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
+</script>

@@ -3,7 +3,7 @@ class IncomesController < ApplicationController
   def create
     @income = Income.new(income_params)
     if @income.save
-      redirect_to User.find(income_params[:user_id])
+      redirect_to user_path(income_params[:user_id])
     else
       redirect_to :back
     end
