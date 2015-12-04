@@ -1,0 +1,21 @@
+
+<div class="table-responsive" id="income_table">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Источник дохода</th>
+      <th>Сумма</th>
+    </tr>
+    </thead>
+    <% @user.incomes.each do |income| %>
+    <tbody>
+    <tr>
+      <td><%= income.id %></td>
+      <td><%= income.title %></td>
+      <td><%= income.sum %></td>
+    </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>

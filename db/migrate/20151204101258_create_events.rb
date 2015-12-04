@@ -9,6 +9,6 @@ class CreateEvents < ActiveRecord::Migration
 
         t.timestamps
     end
-    add_reference :events, :user, index: true
+    add_reference :events, :user, showhtml: true
   end
 end

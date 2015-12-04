@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :plans
   has_one :wallet
   has_many :events
+  has_many :incomes
 end
