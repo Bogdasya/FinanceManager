@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-   @user = User.includes(:incomes).find(params[:id]).decorate
+   @user = User.includes(:incomes, :expenses).find(params[:id]).decorate
   end
 
   def update

@@ -7,14 +7,14 @@
       <th>Сумма</th>
     </tr>
     </thead>
-    <% @user.incomes.each do |income| %>
-    <tbody>
-    <tr>
-      <td><%= income.id %></td>
-      <td><%= income.title %></td>
-      <td><%= income.sum %></td>
-    </tr>
-    </tbody>
+    <% @user.expenses.each do |income| %>
+        <tbody>
+        <tr>
+          <td><%= income.id %></td>
+          <td><%= income.title %></td>
+          <td><%= income.sum %></td>
+        </tr>
+        </tbody>
     <% end %>
   </table>
 </div>

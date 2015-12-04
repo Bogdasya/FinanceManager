@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_one :wallet
   has_many :events
   has_many :incomes
+  has_many :expenses
 end
