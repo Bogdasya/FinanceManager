@@ -27,7 +27,7 @@
     <% end %>
   </div>
   <% if @user.incomes.present? %>
-    <%= render "incomes/show_incomes" %>
+    <%= render "incomes/show_incomes", object: @user %>
   <% end %>
 </div>
 <div class="col-md-4">
@@ -41,7 +41,7 @@
     <% end %>
   </div>
   <% if @user.expenses.present? %>
-      <%= render "expenses/show_expenses" %>
+      <%= render "expenses/show_expenses", object: @user %>
   <% end %>
 </div>
 <div id="main-content">
