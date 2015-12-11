@@ -15,16 +15,16 @@
         </li>
         <% if user_signed_in? %>
             <li>
-              <%= link_to "Charges", [current_user, :charges] %>
+              <%= link_to t('title_charges'), [current_user, :charges] %>
             </li>
             <li>
-              <%= link_to "Calendar", [current_user, :events] %>
+              <%= link_to t('title_calendar'), [current_user, :events] %>
             </li>
             <li>
-              <%= link_to "Profile", current_user %>
+              <%= link_to t('title_profile'), current_user %>
             </li>
             <li>
-              <%= link_to "Sign out", destroy_user_session_path, id: "sign", :method => :delete %>
+              <%= link_to t('title_sign'), destroy_user_session_path, id: "sign", :method => :delete %>
             </li>
         <% else %>
             <li>

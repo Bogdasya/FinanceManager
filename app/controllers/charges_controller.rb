@@ -14,6 +14,12 @@ class ChargesController < ApplicationController
     end
   end
 
+  def destroy
+    @charge = Charge.find(params[:id])
+    @charge.destroy
+    redirect_to :back
+  end
+
   private
   def charge_params
     params.require(:charge).permit(:name, :user_id)

@@ -12,6 +12,10 @@ ru:
   wallet: Создать кошелёк
   walletupdate: На вашем счету
   tasks: Добавить Задание
+  title_charges: Список покупок
+  title_calendar: Календарь/заметки
+  title_profile: Профиль
+  title_sign: Выход
   charges:
     title: Список покупок
     new: На данный момент у вас нет списка покупок, создайте его
