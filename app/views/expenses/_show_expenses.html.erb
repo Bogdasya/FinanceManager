@@ -3,16 +3,17 @@
     <thead>
     <tr>
       <th>#</th>
-      <th>Источник дохода</th>
+      <th>Источник расхода</th>
       <th>Сумма</th>
     </tr>
     </thead>
-    <% object.expenses.each do |income| %>
+    <% object.expenses.each do |expenses| %>
         <tbody>
         <tr>
-          <td><%= income.id %></td>
-          <td><%= income.title %></td>
-          <td><%= income.sum %></td>
+          <td><%= expenses.id %></td>
+          <td><%= expenses.title %></td>
+          <td><%= expenses.sum %></td>
+          <td><%= link_to "Удалить", [@user, expenses], method: :delete %></td>
         </tr>
         </tbody>
     <% end %>

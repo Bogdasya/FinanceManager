@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="description"/>
+  <meta content="width=device-width" name="viewport"/>
+  <title>Autobooking</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= javascript_include_tag "application", "chartkick" %>
+  <%= csrf_meta_tags %>
+  <div id="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <%= render "shared/header" %>
+    </nav>
+  </div>
+</head>
+<body>
+<div id="main-content">
+  <div class="col-lg-12">
+    <div class="jumbotron">
+      <h4 style="text-align: center"><%= t('charges.new') %></h4>
+      <a class="btn btn-primary btn-lg" id="create_charge" role="button">Создать список покупок</a>
+    </div>
+    <div>
+      <div id="charge_new" hidden>
+        <%= form_for  [@user, Charge.new] do |f| %>
+            <%= f.hidden_field :user_id, value: @user.id%>
+            <%= f.text_field :name, id: 'name', placeholder: 'Название', class: 'form-control' %>
+            <%= submit_tag "Сохранить", class: "btn btn-info" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

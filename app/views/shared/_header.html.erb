@@ -13,27 +13,23 @@
         <li>
           <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
         </li>
-        <li>
-          <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-        </li>
-        <li>
         <% if user_signed_in? %>
+            <li>
+              <%= link_to "Charges", [current_user, :charges] %>
+            </li>
+            <li>
               <%= link_to "Calendar", [current_user, :events] %>
-        <% end %>
-        </li>
-        <% if user_signed_in? %>
-        <li>
-          <%= link_to "Profile", current_user %>
-        </li>
-        <% end %>
-        <% if user_signed_in? %>
-         <li>
-           <%= link_to "Sign out", destroy_user_session_path, id: "sign", :method => :delete %>
-         </li>
-         <% else %>
-         <li>
-           <button type="button" class=" fa fa-sign-in btn" id="login" data-toggle="modal" data-target="#myModal"><%= I18n.t('login') %></button>
-         </li>
+            </li>
+            <li>
+              <%= link_to "Profile", current_user %>
+            </li>
+            <li>
+              <%= link_to "Sign out", destroy_user_session_path, id: "sign", :method => :delete %>
+            </li>
+        <% else %>
+            <li>
+            <button type="button" class=" fa fa-sign-in btn" id="login" data-toggle="modal" data-target="#myModal"><%= I18n.t('login') %></button>
+            </li>
         <% end %>
       </ul>
     </div>

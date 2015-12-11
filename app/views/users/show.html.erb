@@ -21,8 +21,8 @@
     <h4>Заполнить сведения о доходах</h4>
     <%= form_for  [@user, Income.new] do |f| %>
         <%= f.hidden_field :user_id, value: @user.id%>
-        <%= f.text_field :title, id: 'name', placeholder: 'Источник', class: 'form-control' %>
-        <%= f.text_field :sum, id: 'name', placeholder: 'Сумма', class: 'form-control' %>
+        <%= f.text_field :title, id: 'name', placeholder: 'Источник', class: 'form-control', required: true %>
+        <%= f.text_field :sum, id: 'name', placeholder: 'Сумма', class: 'form-control', required: true %>
         <%= submit_tag "Сохранить", class: "btn btn-info" %>
     <% end %>
   </div>
@@ -35,8 +35,8 @@
     <h4>Заполнить сведения о расходах</h4>
     <%= form_for  [@user, Expense.new] do |f| %>
         <%= f.hidden_field :user_id, value: @user.id%>
-        <%= f.text_field :title, id: 'name', placeholder: 'Источник', class: 'form-control' %>
-        <%= f.text_field :sum, id: 'name', placeholder: 'Сумма', class: 'form-control' %>
+        <%= f.text_field :title, id: 'name', placeholder: 'Источник', class: 'form-control', required: true %>
+        <%= f.text_field :sum, id: 'name', placeholder: 'Сумма', class: 'form-control', required: true %>
         <%= submit_tag "Сохранить", class: "btn btn-info" %>
     <% end %>
   </div>
@@ -79,7 +79,7 @@
               </div>
               <%= form_for  [@user, @user.wallet] do |f| %>
                   <%= f.hidden_field :user_id, value: @user.id%>
-                  <%= f.text_field :money, id: 'name', placeholder: 'Деньги', class: 'form-control' %>
+                  <%= f.text_field :money, id: 'name', placeholder: 'Деньги', class: 'form-control', required: true %>
                   <%= submit_tag "Изменить Баланс", class: "btn btn-info" %>
               <% end %>
             </div>
@@ -94,8 +94,8 @@
         </div>
             <%= form_for  [@user, Wallet.new] do |f| %>
                 <%= f.hidden_field :user_id, value: @user.id%>
-                <%= f.text_field :name, id: 'name', placeholder: 'Название', class: 'form-control' %>
-                <%= f.text_field :money, id: 'name', placeholder: 'Сумма', class: 'form-control' %>
+                <%= f.text_field :name, id: 'name', placeholder: 'Название', class: 'form-control', required: true %>
+                <%= f.text_field :money, id: 'name', placeholder: 'Сумма', class: 'form-control', required: true %>
                 <%= submit_tag "Сохранить", class: "btn btn-info" %>
             <% end %>
         </div>

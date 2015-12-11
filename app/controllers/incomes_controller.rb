@@ -9,6 +9,12 @@ class IncomesController < ApplicationController
     end
   end
 
+  def destroy
+    @income = Income.find(params[:id])
+    @income.delete
+    redirect_to :back
+  end
+
   private
   def income_params
     params.require(:income).permit(:title, :sum, :user_id)

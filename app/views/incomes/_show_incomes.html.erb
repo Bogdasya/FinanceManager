@@ -13,6 +13,7 @@
       <td><%= income.id %></td>
       <td><%= income.title %></td>
       <td><%= income.sum %></td>
+      <td><%= link_to "Удалить", [@user, income], method: :delete %></td>
     </tr>
     </tbody>
     <% end %>

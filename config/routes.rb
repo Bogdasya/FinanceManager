@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :events
     resources :incomes
     resources :expenses
+    resources :charges
   end
   namespace :users do
     get "/events_calendar", to: 'users#events_calendar', as: :events
