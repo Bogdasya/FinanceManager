@@ -7,15 +7,16 @@
       <th>Сумма</th>
     </tr>
     </thead>
-    <% object.expenses.each do |expenses| %>
         <tbody>
+        <% object.expenses.each do |expenses| %>
         <tr>
           <td><%= expenses.id %></td>
           <td><%= expenses.title %></td>
           <td><%= expenses.sum %></td>
           <td><%= link_to "Удалить", [@user, expenses], method: :delete %></td>
         </tr>
+        <% end %>
         </tbody>
-    <% end %>
   </table>
+  <span id="expense_sum"> Общая сумма затрат <%= object.expenses.sum(:sum) %> грн </span>
 </div>
