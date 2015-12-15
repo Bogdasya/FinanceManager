@@ -20,7 +20,7 @@
     <% unless @charges.present? %>
       <%= render "charges/new_charge", object: @user %>
     <% else %>
-        <h1 class="page-header">У вас <%= @charges.count %> списков
+        <h1 class="page-header">У вас <%= @charges.count %> <%= Russian.p(@charges.count, t('charges.list'), t('charges.list1'), t('charges.list2')) %>
             <a class="btn btn-primary btn-lg" id="create_charge" role="button">Создать список покупок</a>
         </h1>
       <div id="charge_new" hidden>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-xs-9 text-right">
                   <div class="huge"><%= charge.charge_elements.count %></div>
-                  <div>Товара</div>
+                  <div><%= Russian.p(charge.charge_elements.count, t('charges.element'), t('charges.elemetn1'), t('charges.element2')) %></div>
                 </div>
               </div>
             </div>

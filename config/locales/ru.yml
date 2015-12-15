@@ -17,5 +17,11 @@ ru:
   title_profile: Профиль
   title_sign: Выход
   charges:
+    list: список
+    list1: спика
+    list2: списков
     title: Список покупок
+    element: Товар
+    elemetn1: Товара
+    element2: Товаров
     new: На данный момент у вас нет списка покупок, создайте его
