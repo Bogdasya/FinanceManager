@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(user_params[:id])
     @user.update(user_params)
-    flash[:success] = "Welcome to the Sample App!"
+    flash[:alert_user] = @user.errors[:first_name][0]
     redirect_to @user
   end
 

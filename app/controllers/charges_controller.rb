@@ -6,7 +6,6 @@ class ChargesController < ApplicationController
   end
 
   def create
-    binding.pry
     charge = Charge.new(charge_params)
     if charge.save
       redirect_to :back

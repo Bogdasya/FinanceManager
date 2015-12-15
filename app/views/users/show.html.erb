@@ -22,7 +22,13 @@
     <%= form_for  [@user, Income.new] do |f| %>
         <%= f.hidden_field :user_id, value: @user.id%>
         <%= f.text_field :title, id: 'name', placeholder: 'Источник', class: 'form-control', required: true %>
+        <% if flash[:alert_title].present? %>
+            <div class="form-hint"><%= flash[:alert_title] %></div>
+        <% end %>
         <%= f.text_field :sum, id: 'name', placeholder: 'Сумма', class: 'form-control', required: true %>
+        <% if flash[:alert].present? %>
+            <div class="form-hint"><%= flash[:alert] %></div>
+        <% end %>
         <%= submit_tag "Сохранить", class: "btn btn-info" %>
     <% end %>
   </div>
@@ -36,7 +42,13 @@
     <%= form_for  [@user, Expense.new] do |f| %>
         <%= f.hidden_field :user_id, value: @user.id%>
         <%= f.text_field :title, id: 'name', placeholder: 'Источник', class: 'form-control', required: true %>
+        <% if flash[:error_title].present? %>
+            <div class="form-hint"><%= flash[:error_title] %></div>
+        <% end %>
         <%= f.text_field :sum, id: 'name', placeholder: 'Сумма', class: 'form-control', required: true %>
+        <% if flash[:error].present? %>
+            <div class="form-hint"><%= flash[:error] %></div>
+        <% end %>
         <%= submit_tag "Сохранить", class: "btn btn-info" %>
     <% end %>
   </div>
@@ -59,6 +71,9 @@
             <%= form_for  @user do |f| %>
                    <%= f.hidden_field :id, value: @user.id%>
                    <%= f.text_field :first_name, id: 'name', placeholder: 'Имя', class: 'form-control' %>
+                    <% if flash[:alert_user].present? %>
+                      <div class="form-hint"><%= flash[:alert_user] %></div>
+                    <% end %>
                    <%= f.text_field :last_name, id: 'name', placeholder: 'Фамилия', class: 'form-control' %>
                    <%= f.text_field :email, id: 'name', placeholder: 'Почта', class: 'form-control' %>
                    <%= f.text_field :mobile_phone, id: 'name', placeholder: 'Телефон', class: 'form-control' %>
