@@ -6,8 +6,8 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @charge = Charge.new(charge_params)
-    if @charge.save
+    charge = Charge.new(charge_params)
+    if charge.save
       redirect_to :back
     else
       redirect_to :back
@@ -15,8 +15,8 @@ class ChargesController < ApplicationController
   end
 
   def destroy
-    @charge = Charge.find(params[:id])
-    @charge.destroy
+    charge = Charge.find(params[:id])
+    charge.destroy
     redirect_to :back
   end
 

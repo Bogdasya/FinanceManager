@@ -1,8 +1,8 @@
 class WalletsController < ApplicationController
 
   def create
-    @wallet = Wallet.new(wallet_params)
-    if @wallet.save
+    wallet = Wallet.new(wallet_params)
+    if wallet.save
       redirect_to user_path(wallet_params[:user_id])
     else
       redirect_to :back
@@ -10,8 +10,8 @@ class WalletsController < ApplicationController
   end
 
   def update
-    @wallet = User.find(wallet_params[:user_id]).wallet
-    @wallet.update(wallet_params)
+    wallet = User.find(wallet_params[:user_id]).wallet
+    wallet.update(wallet_params)
     redirect_to :back, notice: 'Wallet succesfully updated'
   end
 

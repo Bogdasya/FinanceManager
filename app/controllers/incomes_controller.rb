@@ -1,8 +1,8 @@
 class IncomesController < ApplicationController
 
   def create
-    @income = Income.new(income_params)
-    if @income.save
+    income = Income.new(income_params)
+    if income.save
       redirect_to user_path(income_params[:user_id])
     else
       redirect_to :back
@@ -10,8 +10,8 @@ class IncomesController < ApplicationController
   end
 
   def destroy
-    @income = Income.find(params[:id])
-    @income.delete
+    income = Income.find(params[:id])
+    income.delete
     redirect_to :back
   end
 

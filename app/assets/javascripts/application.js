@@ -18,3 +18,20 @@
 //= require moment
 //= require bootstrap-datepicker
 //= require_tree .
+
+$(function() {
+    $(document).ajaxError(function (e, xhr, settings) {
+        if (xhr.status == 401) {
+            $(".modal-header").append("<div class='alert alert-danger alert-dismissible fade in' role='alert'> <button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> <span style='margin-left: 200px;'> Пароль не подходит </span></div>")
+        }
+    });
+
+    $("#create_wallet").click(function () {
+        $("#wallet_div").show();
+        $("#create_wallet").hide();
+    });
+    $('#create_charge').click(function () {
+        $("#charge_new").show();
+        $(".jumbotron").hide();
+    });
+});

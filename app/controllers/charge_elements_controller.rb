@@ -1,8 +1,8 @@
 class ChargeElementsController < ApplicationController
 
   def create
-    @event = ChargeElement.new(charge_element_params)
-    if @event.save
+    event = ChargeElement.new(charge_element_params)
+    if event.save
       redirect_to :back
     else
       redirect_to :back
@@ -10,8 +10,8 @@ class ChargeElementsController < ApplicationController
   end
 
   def destroy
-    @charge_element = ChargeElement.find(params[:id])
-    @charge_element.delete
+    charge_element = ChargeElement.find(params[:id])
+    charge_element.delete
     redirect_to :back
   end
 

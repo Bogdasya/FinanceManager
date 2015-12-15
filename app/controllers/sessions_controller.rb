@@ -1,5 +1,5 @@
 class SessionsController < Devise::SessionsController
-  skip_before_filter :verify_authenticity_token, :only => :destroy
+  skip_before_filter :verify_authenticity_token
 
   def create
     if User.find_by(email: params[:user][:email])
@@ -10,7 +10,6 @@ class SessionsController < Devise::SessionsController
       end
     else
       build_resource(sign_up_params)
-
       resource.save
       if resource.persisted?
         if resource.active_for_authentication?
@@ -23,9 +22,13 @@ class SessionsController < Devise::SessionsController
       else
         clean_up_passwords resource
         set_minimum_password_length
+        respond_to do |format|
+          @error = "Пароль не может быть меньше 8 символов"
+          format.js { render action: 'login'}
         end
-      end
+        end
     end
+  end
 
   private
   def build_resource(hash=nil)

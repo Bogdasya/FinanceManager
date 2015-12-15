@@ -6,8 +6,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    if @event.save
+    event = Event.new(event_params)
+    if event.save
       redirect_to :back
     else
       redirect_to :back
