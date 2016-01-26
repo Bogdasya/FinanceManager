@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :incomes
   has_many :expenses
+  has_many :wishes
   validates_length_of :first_name, minimum: 5,
                       wrong_length: "should be %{count} characters long"
 

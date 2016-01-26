@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :wallets
     resources :events
+    resources :wishes
     resources :incomes
     resources :expenses
     resources :charges do

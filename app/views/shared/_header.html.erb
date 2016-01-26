@@ -10,10 +10,10 @@
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
-        <li>
-          <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-        </li>
         <% if user_signed_in? %>
+            <li>
+              <%= link_to t('title_wishes'), [current_user, :wishes] %>
+            </li>
             <li>
               <%= link_to t('title_charges'), [current_user, :charges] %>
             </li>
