@@ -33,6 +33,7 @@ gem 'draper'
 gem 'simple_calendar', '~> 2.0'
 gem 'momentjs-rails'
 gem 'bootstrap-datepicker-rails'
+gem  'unicode_utils'
 
 gem 'rails_12factor', group: :production
 
